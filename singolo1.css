@@ -93,7 +93,7 @@
   transition: color 300ms ease-in-out;
 }
 
-.navigation .active-link {
+.navigation__button_active {
   color: #f06c64;
 }
 
