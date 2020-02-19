@@ -19,18 +19,18 @@
       </div>
       <div class="quote__container">
         <form method="POST" class="quote__form">
-          <input type="text" name="name">
-          <input type="email" name="email">
-          <input type="text" name="subject">
-          <textarea name="textarea" id="area" cols="30" rows="10"></textarea>
-          <input type="submit">
+          <input class="name" type="text" name="name" placeholder="Name (Required)" required>
+          <input class="email" type="email" name="email" placeholder="Email (Required)" required>
+          <input class="subject" type="text" name="subject" placeholder="Subject">
+          <textarea class="textarea" name="textarea" id="area" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+          <input class="submit" type="submit">
         </form>
         <div class="quote__contacts contacts">
             <div class="contacts__header">
               Contact Information
             </div>
             <div class="contacts__description">
-              Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. 
+              Quisque hendrerit purus dapibus, ornare nibh vitae, viver- ra nibh. 
               Fusce vitae aliquam tellus. Proin sit amet volutpat libero. 
               Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. 
             </div>
@@ -55,6 +55,10 @@
         </div>
       </div>
     </section>
+    <footer class="page-footer">
+      <div class="copyright">@ Copyright 2013</div>
+      
+    </footer>
   </div>
 </body>
 </html>
