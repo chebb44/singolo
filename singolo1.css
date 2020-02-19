@@ -32,13 +32,13 @@
 }
 
 .logo {
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   margin: 0;
-  font-size: 25.5px;
-  line-height: 6px;
+  font-size: 25px;
+  line-height: 25px;
   color: #ffffff;
   font-family: "Lato";
-  font-weight: 700;
+  font-weight: 400;
   text-align: left;
 }
 
@@ -63,11 +63,13 @@
 
 .navigation__button {
   position: relative;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.4px;
   color: white;
   font-family: "Lato";
   font-weight: 700;
   text-align: left;
+  text-decoration: none;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
 }
@@ -84,15 +86,15 @@
   display: none;
 }
 
-.navigation__button:nth-child(1) {
-  color: #f06c64;
-}
-
 .navigation__button:hover {
   cursor: pointer;
   color: #6262fa;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
+}
+
+.navigation .active-link {
+  color: #f06c64;
 }
 
 .slider {
@@ -162,12 +164,12 @@
 .services__description {
   margin-top: 27px;
   font-size: 18px;
-  letter-spacing: -0.08px;
+  letter-spacing: -0.2px;
   line-height: 30px;
   color: #767e9e;
   font-family: "Lato";
   font-weight: 300;
-  text-align: left;
+  text-align: justify;
 }
 
 .services__container {
