@@ -156,12 +156,14 @@
 
   &__name {
     font-size: 18px;
+    height: 18px;
     line-height: 18px;
     color: #666d89;
     font-family: "Lato";
     font-weight: 900;
     text-align: left;
     margin-bottom: 10px;
+    overflow: hidden;
   }
 
   &__description {
@@ -183,9 +185,14 @@
 .social-icons-block {
   display: flex;
   justify-content: space-between;
+  &__item {
+    transition-duration: 500ms;
+    &:hover{
+      transform: rotate(360deg);
+      transition-duration: 500ms;
+    }
+  }
 }
-
-
 
 @font-face {
   font-family: "Lato";

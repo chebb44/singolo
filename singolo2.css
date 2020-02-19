@@ -184,12 +184,14 @@
 
 .card__name {
   font-size: 18px;
+  height: 18px;
   line-height: 18px;
   color: #666d89;
   font-family: "Lato";
   font-weight: 900;
   text-align: left;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .card__description {
@@ -214,6 +216,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.social-icons-block__item {
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.social-icons-block__item:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 @font-face {
