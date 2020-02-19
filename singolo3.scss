@@ -14,7 +14,7 @@
 
 .quote {
   width: 100%;
-  height: 650px;
+  height: 654px;
   background-color: #f06c64;
   padding-top: 68px;
   padding-left: 40px;
@@ -161,6 +161,40 @@ a{
   }
 }
 
+.page-footer {
+  width: 100%;
+  height: 77px;
+  background-color: #2d303a;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__copyright {
+    font-size: 12px;
+    line-height: 22px;
+    color: #f48c8f;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: left;
+    margin-left: 2px;
+  }
+
+  &__social-icons {
+    padding-top: 5px;
+    width: 152px;
+  }
+}
+.social-icons-block {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
 
 
 @font-face {
