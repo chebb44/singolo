@@ -128,6 +128,94 @@
   overflow: hidden;
 }
 
+.about-us {
+  width: 100%;
+  height: 728px;
+  background-color: #f2f2f2;
+  padding-top: 68px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.about-us__header {
+  letter-spacing: -0.1px;
+  font-size: 30px;
+  line-height: 18px;
+  color: #666d89;
+  font-family: "Lato";
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 27px;
+}
+
+.about-us__description {
+  font-size: 18px;
+  line-height: 30px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 45px;
+  word-spacing: -0.4px;
+}
+
+.about-us__container {
+  width: 100%;
+}
+
+.container-3-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-3-column__item {
+  -ms-flex-preferred-size: 303px;
+      flex-basis: 303px;
+}
+
+.card__photo {
+  margin-bottom: 15px;
+  height: 302px;
+}
+
+.card__name {
+  font-size: 18px;
+  line-height: 18px;
+  color: #666d89;
+  font-family: "Lato";
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  font-size: 12px;
+  line-height: 22px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: -0.15px;
+  margin-bottom: 22px;
+}
+
+.card__social-icons {
+  width: 154px;
+}
+
+.social-icons-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 @font-face {
   font-family: "Lato";
   src: url("assets/Lato-Regular.ttf") format("truetype");
