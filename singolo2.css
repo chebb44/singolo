@@ -20,6 +20,7 @@
   padding-left: 40px;
   padding-top: 70px;
   background-color: #2d303a;
+  border-bottom: 6px solid #323746;
 }
 
 .portfolio__header {
@@ -49,7 +50,7 @@
 }
 
 .portfolio__content-container {
-  height: 600px;
+  height: 620px;
   overflow: hidden;
 }
 
@@ -74,6 +75,16 @@
   padding-right: 6px;
   border: 1px solid #767e9e;
   border-radius: 5px;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+  -webkit-transition: border-color 300ms ease-in-out;
+  transition: border-color 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.filter__button_active {
+  color: #dedede;
+  border-color: #dedede;
 }
 
 .filter__button:first-child {
@@ -82,13 +93,12 @@
 }
 
 .filter__button:hover {
-  color: #bbaa60;
-  border-color: #bbaa60;
-}
-
-.filter .active {
-  color: #dedede;
-  border-color: #dedede;
+  color: #adb817;
+  border-color: #adb817;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+  -webkit-transition: border-color 300ms ease-in-out;
+  transition: border-color 300ms ease-in-out;
 }
 
 .container-4x3 {
@@ -104,7 +114,8 @@
 
 .container-4x3__item {
   width: 220px;
-  height: 187px;
+  height: 186px;
+  margin-bottom: 21px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,6 +125,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 @font-face {
