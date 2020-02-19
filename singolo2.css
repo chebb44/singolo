@@ -13,6 +13,109 @@
   position: relative;
 }
 
+.portfolio {
+  width: 100%;
+  height: 870px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 70px;
+  background-color: #2d303a;
+}
+
+.portfolio__header {
+  font-size: 30px;
+  line-height: 18px;
+  color: #666d89;
+  font-family: "Lato";
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 26px;
+  letter-spacing: 0.2px;
+}
+
+.portfolio__description {
+  font-size: 18px;
+  line-height: 30px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 11px;
+  letter-spacing: -0.2px;
+}
+
+.portfolio__filters {
+  margin-bottom: 20px;
+}
+
+.portfolio__content-container {
+  height: 600px;
+  overflow: hidden;
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 287px;
+}
+
+.filter__button {
+  font-size: 12px;
+  line-height: 20px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 400;
+  text-align: left;
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 1px solid #767e9e;
+  border-radius: 5px;
+}
+
+.filter__button:first-child {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.filter__button:hover {
+  color: #bbaa60;
+  border-color: #bbaa60;
+}
+
+.filter .active {
+  color: #dedede;
+  border-color: #dedede;
+}
+
+.container-4x3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-4x3__item {
+  width: 220px;
+  height: 187px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @font-face {
   font-family: "Lato";
   src: url("assets/Lato-Regular.ttf") format("truetype");
