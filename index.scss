@@ -376,7 +376,11 @@
     font-size: 18px;
     line-height: 30px;
     font-family: "Lato";
+<<<<<<< HEAD
     text-align: justify;
+=======
+    text-align: left;
+>>>>>>> refactor: css comb
     color: #767e9e;
     word-spacing: -0.4px;
   }
@@ -469,7 +473,11 @@
     font-size: 18px;
     line-height: 30px;
     font-family: "Lato";
+<<<<<<< HEAD
     text-align: justify;
+=======
+    text-align: left;
+>>>>>>> refactor: css comb
     color: #f0d8d9;
     letter-spacing: -0.04px;
   }
@@ -617,20 +625,29 @@
   background-color: #2d303a;
 
   &__copyright {
+<<<<<<< HEAD
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 2px;
+=======
+    margin-left: 2px;
+
+>>>>>>> refactor: css comb
     font-weight: 400;
     font-size: 12px;
     line-height: 22px;
     font-family: "Lato";
     text-align: left;
+<<<<<<< HEAD
     vertical-align: middle;
     color: #575d74;
     .copyright-text{
       margin-bottom: 3px;
     }
+=======
+    color: #f48c8f;
+>>>>>>> refactor: css comb
   }
 
   &__social-icons {
