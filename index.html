@@ -8,14 +8,15 @@
 </head>
 <body>
   <div class="page-wrapper">
+    <a name="home"></a>
     <header class="page-header uppercase">
       <h1 class="page-header__logo logo">Singolo<span class="logo__star">*</span></h1>
       <nav class="page-header_navigation navigation">
-        <a href="#" class="navigation__button navigation__button_active">Home</a>
-        <a href="#" class="navigation__button">Services</a>
-        <a href="#" class="navigation__button">Portfolio</a>
-        <a href="#" class="navigation__button">About</a>
-        <a href="#" class="navigation__button">Contact</a>
+        <a href="#home" class="navigation__button navigation__button_active">Home</a>
+        <a href="#services" class="navigation__button">Services</a>
+        <a href="#portfolio" class="navigation__button">Portfolio</a>
+        <a href="#about" class="navigation__button">About</a>
+        <a href="#contact" class="navigation__button">Contact</a>
       </nav>
     </header>
     <section class="slider">
@@ -25,9 +26,17 @@
       <div class="slider__arrow-right arrow-interactive">
         <img src="assets/arrow.png" alt="arrow">
       </div>
-      <img src="assets/iPhone Vertical.png" alt="pic-1" class="slider__pic-1">
-      <img src="assets/iPhone Horizontal.png" alt="pic-2" class="slider__pic-2">
+      <div class="slide-1 slider__item active">
+        <img src="assets/iPhone Vertical.png" alt="pic-1" class="slider__pic-1">
+        <img src="assets/iPhone Horizontal.png" alt="pic-2" class="slider__pic-2">
+        <div class="screen-phone-1 hidden"></div>
+        <div class="screen-phone-2 hidden"></div>
+      </div>
+      <div class="slide-2 slider__item">
+        <img src="./assets/Slide-2.png" alt="slide2">
+      </div>
     </section>
+    <a name="services"></a>
     <section class="services">
       <div class="services__header">Our Services</div>
       <div class="services__description">
@@ -84,6 +93,7 @@
       </div>
     </section>
     <!-- end of part1 -->
+    <a name="portfolio"></a>
     <section class="portfolio">
       <div class="portfolio__header">
         Portfolio
@@ -134,11 +144,9 @@
         <div class="container-4x3__item">
           <img src="assets/portfolio/Project-12.png" alt="picture">
         </div>
-        <div class="container-4x3__item">
-          <img src="assets/portfolio/Project-12.png" alt="picture">
-        </div>
       </div>
     </section>
+    <a name="about"></a>
     <section class="about-us">
       <div class="about-us__header">
         About Us
@@ -230,6 +238,7 @@
       </div>
     </section>
       <!-- end of part2 -->
+    <a name="contact"></a>
     <section class="quote">
       <div class="quote__header">
         Get a Quote
@@ -240,12 +249,12 @@
         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
       </div>
       <div class="quote__container">
-        <form method="POST" class="quote__form">
+        <form method="POST" class="quote__form" id="form">
           <input class="name" type="text" name="name" placeholder="Name (Required)" required>
           <input class="email" type="email" name="email" placeholder="Email (Required)" required>
-          <input class="subject" type="text" name="subject" placeholder="Subject">
-          <textarea class="textarea" name="textarea" id="area" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-          <input class="submit" type="submit" value="Submit">
+          <input class="subject" type="text" name="subject" placeholder="Subject" id='subject-input'>
+          <textarea class="textarea" name="textarea" cols="30" rows="10" placeholder="Describe your project in detail..." id="textarea"></textarea>
+          <input class="submit" type="submit" value="Submit" id='submit-btn'>
         </form>
         <div class="quote__contacts contacts">
             <div class="contacts__header">
@@ -299,5 +308,6 @@
       </div>
     </footer>
     </div>
+    <script src="./index.js"></script>
 </body>
 </html>
