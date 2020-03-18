@@ -190,17 +190,25 @@ function shomModalWindow(){
   const modalWindow = document.createElement('div');
   modalWindow.id = 'modal-window';
   modalWindow.style.top = `${window.pageYOffset + document.documentElement.clientHeight / 2 - 100}px`;  
-  modalWindow.style.left = `${window.pageXOffset + document.documentElement.clientWidth / 2 - 150}px`;  
+  modalWindow.style.left = `calc (100% - 150px / 2)`;  
   
   modalWindow.insertAdjacentHTML("beforeend", `<p>Письмо отправлено</p>`);
   if (document.getElementById('subject-input').value){
-    modalWindow.insertAdjacentHTML("beforeend", `<p>Тема: ${document.getElementById('subject-input').value}</p>`);
+    if (document.getElementById('subject-input').value.length > 50) {
+      modalWindow.insertAdjacentHTML("beforeend", `<p>Тема: ${document.getElementById('subject-input').value.substring(0,50)}...</p>`);
+    } else{
+      modalWindow.insertAdjacentHTML("beforeend", `<p>Тема: ${document.getElementById('subject-input').value}</p>`);
+    }
   } else {
     modalWindow.insertAdjacentHTML("beforeend", `<p>Без темы</p>`);
   }
   
   if (document.getElementById('textarea').value){
-    modalWindow.insertAdjacentHTML("beforeend", `<p>Описание: ${document.getElementById('textarea').value}</p>`);
+    if (document.getElementById('textarea').value.length > 50){
+      modalWindow.insertAdjacentHTML("beforeend", `<p>Описание: ${document.getElementById('textarea').value.substring(0,50)}...</p>`);
+    } else{
+      modalWindow.insertAdjacentHTML("beforeend", `<p>Описание: ${document.getElementById('textarea').value}</p>`);
+    }
   } else {
     modalWindow.insertAdjacentHTML("beforeend", `<p>Без описания</p>`);
   }
@@ -220,6 +228,7 @@ function shomModalWindow(){
 document.getElementById('form').addEventListener('submit', function(e){
   e.preventDefault();
   shomModalWindow();
+  e.currentTarget.reset();
 })
 
 
