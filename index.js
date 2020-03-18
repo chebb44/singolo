@@ -1,5 +1,5 @@
 const navMenu = document.querySelector('.page-header_navigation');
-navItems  = navMenu.querySelectorAll('.navigation__button');
+let navItems  = navMenu.querySelectorAll('.navigation__button');
 navMenu.addEventListener('click', function(event){
   navItems.forEach(element => {
     element.classList.remove('navigation__button_active');
@@ -164,17 +164,16 @@ filter.addEventListener('click', function(event){
 });
 
 const portfolioContainer = document.querySelector('.portfolio__content-container');
-const portfolioItems =  Array.from(portfolioContainer.querySelectorAll('.container-4x3__item'));
-console.log("portfolioItems", portfolioItems.length);
-for (let i = 0; i < portfolioItems.length; i++) {
-  portfolioItems[i].style.order = i;
-}
 
 function changePortfolioOrder() {
+  const portfolioItems =  Array.from(portfolioContainer.querySelectorAll('.container-4x3__item'));
+  const tempItem = portfolioItems.shift();
+  portfolioItems[0] = portfolioItems[portfolioItems.length-1];
+  portfolioItems.push(tempItem);
   for (let i = 0; i < portfolioItems.length; i++) {
-    let n = (+portfolioItems[i].style.order + 1) % portfolioItems.length;
-    portfolioItems[i].style.order = n;
+    portfolioContainer.appendChild(portfolioItems[i]);
   }
+  
 }
 
 portfolioContainer.addEventListener('click', function(event){
@@ -231,5 +230,15 @@ document.getElementById('form').addEventListener('submit', function(e){
   e.currentTarget.reset();
 })
 
+document.addEventListener('scroll', function(ev) {
+  let targetClass = document.elementFromPoint(document.documentElement.clientHeight / 2, document.documentElement.clientHeight / 2).closest('section').classList.value;
+  navItems.forEach(element => {
+    element.classList.remove('navigation__button_active');
+  });
+  let activeBtn = navMenu.querySelector(`.${targetClass}-btn`);
+  activeBtn.classList.add('navigation__button_active');
+  localStorage.setItem('scrollPosition', document.documentElement.scrollTop);
+});
 
 
+document.documentElement.scrollTop = localStorage.getItem('scrollPosition') || 0;
