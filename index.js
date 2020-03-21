@@ -232,14 +232,39 @@ document.getElementById('form').addEventListener('submit', function(e){
 })
 
 document.addEventListener('scroll', function(ev) {
-  let targetClass = document.elementFromPoint(document.documentElement.clientHeight / 2, document.documentElement.clientHeight / 2).closest('section').classList.value;
-  navItems.forEach(element => {
-    element.classList.remove('navigation__button_active');
-  });
-  let activeBtn = navMenu.querySelector(`.${targetClass}-btn`);
-  activeBtn.classList.add('navigation__button_active');
+  try{
+    let targetClass = document.elementFromPoint(document.documentElement.clientHeight / 2, document.documentElement.clientHeight / 2).closest('section').classList.value;
+    navItems.forEach(element => {
+      element.classList.remove('navigation__button_active');
+    });
+    let activeBtn = navMenu.querySelector(`.${targetClass}-btn`);
+    activeBtn.classList.add('navigation__button_active');
+  }
+  catch{
+    return;
+  }
   localStorage.setItem('scrollPosition', document.documentElement.scrollTop);
 });
 
 
 document.documentElement.scrollTop = localStorage.getItem('scrollPosition') || 0;
+
+const burger = document.querySelector('#burger');
+const sidebar = document.querySelector('#sidebar');
+let sidebarActive = false;
+burger.addEventListener('click', function(ev){
+  burger.classList.toggle('rotate-burger');
+  if(!sidebarActive){
+    sidebar.style.display = 'flex';
+    sidebarActive = true;
+  } else{
+    sidebar.style.display = 'none';
+    sidebarActive = false;
+  }
+});
+
+document.querySelector('.sidebar__links-block').addEventListener('click', function(){
+  burger.classList.toggle('rotate-burger');
+  sidebar.style.display = 'none';
+  sidebarActive = false;
+});
