@@ -1,5 +1,8 @@
+const burger = document.querySelector('#burger');
+const sidebar = document.querySelector('#sidebar');
 const navMenu = document.querySelector('.page-header_navigation');
 let navItems  = navMenu.querySelectorAll('.navigation__button');
+let navItemsSidebar  = sidebar.querySelectorAll('.navigation__button');
 navMenu.addEventListener('click', function(event){
   navItems.forEach(element => {
     element.classList.remove('navigation__button_active');
@@ -109,11 +112,11 @@ const swipedetect = (el) => {
     startX = touchObj.pageX;
     startY = touchObj.pageY;
     startTime = new Date().getTime();
-    e.preventDefault();
+    // e.preventDefault();
   });
 
   surface.addEventListener('touchmove', function(e){
-    e.preventDefault();
+    // e.preventDefault();
   });
 
   surface.addEventListener('touchend', function(e){
@@ -132,7 +135,7 @@ const swipedetect = (el) => {
       }
     }
     
-    e.preventDefault();
+    // e.preventDefault();
   });
 }
 let el = document.querySelector('.slider');
@@ -232,14 +235,65 @@ document.getElementById('form').addEventListener('submit', function(e){
 })
 
 document.addEventListener('scroll', function(ev) {
-  let targetClass = document.elementFromPoint(document.documentElement.clientHeight / 2, document.documentElement.clientHeight / 2).closest('section').classList.value;
-  navItems.forEach(element => {
-    element.classList.remove('navigation__button_active');
-  });
-  let activeBtn = navMenu.querySelector(`.${targetClass}-btn`);
-  activeBtn.classList.add('navigation__button_active');
+  try{
+    let targetClass = document.elementFromPoint(document.documentElement.clientWidth - 20, document.documentElement.clientHeight / 2).closest('section').classList.value;
+    navItems.forEach(element => {
+      element.classList.remove('navigation__button_active');
+    });
+    navItemsSidebar.forEach(element => {
+      element.classList.remove('navigation__button_active');
+    });
+    
+    let activeBtn = navMenu.querySelector(`.${targetClass}-btn`);
+    activeBtn.classList.add('navigation__button_active');
+    let activeBtnSide = sidebar.querySelector(`.${targetClass}-btn`);
+    activeBtnSide.classList.add('navigation__button_active');
+  }
+  catch{
+    return;
+  }
   localStorage.setItem('scrollPosition', document.documentElement.scrollTop);
 });
 
 
+
 document.documentElement.scrollTop = localStorage.getItem('scrollPosition') || 0;
+
+let sidebarActive = false;
+let burgerEnable = true;
+function hideSidebar(){
+  document.querySelector('.page-wrapper').classList.remove('fixed');
+  sidebar.classList.remove('to-left');
+  sidebar.style.display = 'none';
+  sidebarActive = false;
+  document.querySelector('#head-logo').style.opacity = '1';
+  burgerEnable = true;
+}
+
+burger.addEventListener('click', function(ev){
+  if (burgerEnable){
+    burgerEnable = false;
+    sidebar.removeEventListener('animationend', hideSidebar);
+    burger.classList.toggle('rotate-burger');
+    if(!sidebarActive){
+      document.querySelector('#head-logo').style.opacity = '0';
+      sidebar.style.display = 'flex';
+      sidebar.classList.add('from-left');
+      sidebar.addEventListener('animationend', function(){
+        sidebar.classList.remove('from-left');
+        sidebarActive = true;
+        burgerEnable = true;
+      });
+    } else{
+      sidebar.classList.add('to-left');
+      sidebar.addEventListener('animationend', hideSidebar);
+    }
+  }
+});
+
+document.querySelector('.sidebar__links-block').addEventListener('click', function(){
+  burger.classList.toggle('rotate-burger');
+  sidebarActive = false;
+  sidebar.classList.add('to-left');
+  sidebar.addEventListener('animationend', hideSidebar);
+});

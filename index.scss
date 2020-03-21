@@ -12,6 +12,9 @@ html{
 .anchor{
   position: absolute;
   top: -94px;
+  @media screen and (max-width: 1019px) {
+    top: -70px;
+  }
 }
 
 .page-wrapper {
@@ -21,6 +24,10 @@ html{
   min-width: 320px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.fixed{
+  position: fixed;
 }
 
 .page-header {
@@ -45,22 +52,27 @@ html{
 
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     height: 71px;
   }
 }
 .page-header__burger{
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
+  transition-duration: 500ms;
   background: url(./assets/burger.svg);
   background-position: center;
   background-size: cover;
   width: 20px;
   height: 25px;
   display: none;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 767px) {
     display: block;
   }
   z-index: 100;
+}
+.rotate-burger{
+  transform: rotate(0deg);
+  transition-duration: 500ms;
 }
 
 .page-header__sidebar{
@@ -71,9 +83,11 @@ html{
   height: 100vh;
   background: #2D303A;
   display: none;
+  transition-duration: 500ms;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  animation: 0.3s ease-in-out;
   
   .burger__logo{
     font-family: Lato;
@@ -101,6 +115,9 @@ html{
     font-size: 24px;
     line-height: 29px;
     letter-spacing: -0.035em;
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -113,13 +130,14 @@ html{
   text-align: left;
   color: #ffffff;
   letter-spacing: -0.5px;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 767px) {
     text-align: center;
     flex-grow: 1;
     font-weight: bold;
     font-size: 19.6875px;
     line-height: 24px;
   }
+  transition: 0.3s;
 }
 
 .logo__star {
@@ -139,7 +157,7 @@ html{
   width: 371px;
   height: 100%;
   padding-top: 7px;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 }
@@ -198,14 +216,14 @@ html{
 
 .slider__arrow-left {
   left: 3.4%;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     left: 2.5%;
   }
 }
 
 .slider__arrow-right {
   right: 3.4%;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     right: 2.5%;
   }
 }
@@ -219,7 +237,7 @@ html{
   img{
     width: 100%;
   }
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     width: 3%;
   }
 }
@@ -347,7 +365,7 @@ html{
   position: relative;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     padding-top: 40px;
   }
   @media screen and (max-width: 767px) {
@@ -393,7 +411,7 @@ html{
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     padding-right: 35px;
   }
   @media screen and (max-width: 767px) {
@@ -413,7 +431,7 @@ html{
   margin-right: -10px;
   margin-bottom: 33px;
   padding-left: 80px;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1019px) {
     flex-basis: 47%;
   }
   @media screen and (max-width: 767px) {
@@ -593,7 +611,7 @@ html{
       float: left;
       padding-top: 85%;
     }
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1019px) {
       width: 30%;
     }
     @media screen and (max-width: 767px) {
@@ -720,13 +738,26 @@ html{
 // end of part2
 .quote {
   width: 100%;
-  height: 654px;
   padding-top: 68px;
+  padding-bottom: 65px;
   padding-right: 40px;
   padding-left: 40px;
   position: relative;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  @media screen and (max-width: 1019px) {
+    padding-right: 35px;
+    padding-bottom: 45px;
+    padding-top: 58px;
+  }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
   &__header {
     margin-bottom: 27px;
@@ -750,16 +781,30 @@ html{
     text-align: justify;
     color: #f0d8d9;
     letter-spacing: -0.04px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__form {
-    width: 620px;
-
+    max-width: 620px;
+    width: 70%;
+    margin-right: 20px;
+    flex-grow: 1;
+    @media screen and (max-width: 767px) {
+      margin-right: 0;
+      padding-bottom: 30px;
+      max-width: 100%;
+    }
     .name,
     .email,
     .subject,
@@ -809,11 +854,16 @@ html{
         transition: color 300ms ease-in-out;
         transition: border 300ms ease-in-out;
       }
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
     }
   }
 
   &__contacts {
-    width: 300px;
+    max-width: 300px;
+
+    width: 100%;
   }
 }
 .contacts {
@@ -893,6 +943,9 @@ html{
   padding-left: 40px;
 
   background-color: #2d303a;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
 
   &__copyright {
     display: flex;
@@ -908,6 +961,9 @@ html{
     color: #575d74;
     .copyright-text{
       margin-bottom: 3px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
     }
   }
 

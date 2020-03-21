@@ -17,6 +17,12 @@ html {
   top: -94px;
 }
 
+@media screen and (max-width: 1019px) {
+  .anchor {
+    top: -70px;
+  }
+}
+
 .page-wrapper {
   position: relative;
   width: 100%;
@@ -24,6 +30,10 @@ html {
   min-width: 320px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .page-header {
@@ -52,15 +62,17 @@ html {
   border-bottom: 6px solid #323746;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .page-header {
     height: 71px;
   }
 }
 
 .page-header__burger {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
   background: url(./assets/burger.svg);
   background-position: center;
   background-size: cover;
@@ -70,10 +82,17 @@ html {
   z-index: 100;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 767px) {
   .page-header__burger {
     display: block;
   }
+}
+
+.rotate-burger {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 .page-header__sidebar {
@@ -84,6 +103,8 @@ html {
   height: 100vh;
   background: #2D303A;
   display: none;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -94,6 +115,8 @@ html {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-animation: 0.3s ease-in-out;
+          animation: 0.3s ease-in-out;
 }
 
 .page-header__sidebar .burger__logo {
@@ -134,6 +157,10 @@ html {
   letter-spacing: -0.035em;
 }
 
+.page-header__sidebar .navigation__button::after {
+  display: none;
+}
+
 .logo {
   margin: 0;
   font-weight: 400;
@@ -143,9 +170,11 @@ html {
   text-align: left;
   color: #ffffff;
   letter-spacing: -0.5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 767px) {
   .logo {
     text-align: center;
     -webkit-box-flex: 1;
@@ -176,7 +205,7 @@ html {
   padding-top: 7px;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 767px) {
   .navigation {
     display: none;
   }
@@ -233,7 +262,7 @@ html {
   left: 3.4%;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .slider__arrow-left {
     left: 2.5%;
   }
@@ -243,7 +272,7 @@ html {
   right: 3.4%;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .slider__arrow-right {
     right: 2.5%;
   }
@@ -261,7 +290,7 @@ html {
   width: 100%;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .arrow-interactive {
     width: 3%;
   }
@@ -420,7 +449,7 @@ html {
   border-bottom: 6px solid #ffffff;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .services {
     padding-top: 40px;
   }
@@ -470,7 +499,7 @@ html {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .container-3x2 {
     padding-right: 35px;
   }
@@ -494,7 +523,7 @@ html {
   padding-left: 80px;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .container-3x2__item {
     -ms-flex-preferred-size: 47%;
         flex-basis: 47%;
@@ -723,7 +752,7 @@ html {
   padding-top: 85%;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1019px) {
   .container-4x3__item {
     width: 30%;
   }
@@ -879,13 +908,39 @@ html {
 
 .quote {
   width: 100%;
-  height: 654px;
   padding-top: 68px;
+  padding-bottom: 65px;
   padding-right: 40px;
   padding-left: 40px;
   position: relative;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+}
+
+@media screen and (max-width: 1019px) {
+  .quote {
+    padding-right: 35px;
+    padding-bottom: 45px;
+    padding-top: 58px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .quote {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 .quote__header {
@@ -910,7 +965,14 @@ html {
   letter-spacing: -0.04px;
 }
 
+@media screen and (max-width: 767px) {
+  .quote__description {
+    margin-bottom: 30px;
+  }
+}
+
 .quote__container {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -919,8 +981,28 @@ html {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 767px) {
+  .quote__container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .quote__form {
-  width: 620px;
+  max-width: 620px;
+  width: 70%;
+  margin-right: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .quote__form {
+    margin-right: 0;
+    padding-bottom: 30px;
+    max-width: 100%;
+  }
 }
 
 .quote__form .name,
@@ -1000,8 +1082,15 @@ html {
   transition: border 300ms ease-in-out;
 }
 
+@media screen and (max-width: 767px) {
+  .quote__form .submit {
+    width: 100%;
+  }
+}
+
 .quote__contacts {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .contacts__header {
@@ -1085,6 +1174,14 @@ html {
   background-color: #2d303a;
 }
 
+@media screen and (max-width: 767px) {
+  .page-footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .page-footer__copyright {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1107,6 +1204,12 @@ html {
 
 .page-footer__copyright .copyright-text {
   margin-bottom: 3px;
+}
+
+@media screen and (max-width: 767px) {
+  .page-footer__copyright {
+    display: none;
+  }
 }
 
 .page-footer__social-icons {
