@@ -177,6 +177,7 @@ function changePortfolioOrder() {
 }
 
 portfolioContainer.addEventListener('click', function(event){
+  const portfolioItems =  Array.from(portfolioContainer.querySelectorAll('.container-4x3__item'));
   portfolioItems.forEach(element => {
     element.classList.remove('active');
   });
